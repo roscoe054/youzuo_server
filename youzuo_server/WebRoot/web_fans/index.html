@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>增粉排行榜</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Le styles -->
+	<link href="http://www.see-source.com/bootstrap/css/bootstrap.css" rel="stylesheet">
+	<script type="text/javascript" src="http://www.see-source.com/bootstrap/js/jquery.js"></script>
+	<script type="text/javascript" src="http://www.see-source.com/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="http://getbootstrap.com/2.3.2/assets/js/bootstrap.js"></script>
+	<script src="js/Chart.js"></script>
+	<link rel="stylesheet" href="index.css">
+  </head>
+
+  <body>
+    <div class="banner">
+		<div class="mBanner">
+			<div class="lBanner">
+				<p class="bar">
+				<a class="brand" href="#">数音堂</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</p>
+			</div>
+			<div class="rBanner">
+				<p class="rBar">
+				<a class="rBar" href="#">关于</a>&nbsp;&nbsp;&nbsp;
+				<a class="rBar" href="#">联系</a>&nbsp;
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="bg">
+	
+		
+		<div class="content">
+			<div class="row1">
+				<div class="title">
+					<br/><br/>
+					<h1>增粉排行榜</h1>
+				</div>
+				<div class="introduce">
+					<p>
+						<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本报告数据来源为豆瓣音乐人每月增加关注数，可以为Livehouse提供可信的票房数据管理
+						、分析与预测，并为其推荐能为其带来更多票房的乐队。
+					</p>
+					<p>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们将与现场POGO测量技术，与抓取的豆瓣音乐人、
+						同城活动的数据进行整合，实现Livehouse产业模式的量化。
+					</p>
+				</div>
+				<div class="tape">
+					<br/><br/>
+					<img alt="" src="image/tape.jpg" />
+				</div>
+				<br/><br/>
+			</div>
+			
+			<div id="table">
+				<br/>
+				<table id="customers" onmousedown="whichElement(event)">
+					<thead>
+						<tr>
+						<th  width="15%" class="rank">排名</th>
+						<th>音乐人</th>
+						<th  width="25%"  class="fansNum">月增粉数量</th>
+						<th  width="15%" class="status">状态</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr>
+						<td class="rank">1</td>
+						<td  id="tr1">宋冬野</td>
+						<td  id="tr1"class="fansNum">352</td>
+						<td  id="tr1"class="status">上升</td>
+						</tr>
+
+						<tr>
+						<td class="rank">2</td>
+						<td  id="tr2">放肆的肆</td>
+						<td  id="tr2"  class="fansNum">327</td>
+						<td  id="tr2"  class="status">下降</td>
+						</tr>
+
+						<tr>
+						<td class="rank">3</td>
+						<td  id="tr3">左小祖咒</td>
+						<td  id="tr3" class="fansNum">310</td>
+						<td  id="tr3" class="status">下降</td>
+						</tr>
+
+						<tr>
+						<td class="rank">4</td>
+						<td  id="tr4">好妹妹</td>
+						<td  id="tr4" class="fansNum">303</td>
+						<td  id="tr4" class="status">上升</td>
+						</tr>
+
+						<tr>
+						<td class="rank">5</td>
+						<td  id="tr5">花粥</td>
+						<td  id="tr5" class="fansNum">289</td>
+						<td  id="tr5" class="status">下降</td>
+						</tr>
+
+						<tr>
+						<td class="rank">6</td>
+						<td  id="tr6">赌鬼</td>
+						<td  id="tr6" class="fansNum">276</td>
+						<td  id="tr6" class="status">上升</td>
+						</tr>
+						
+						<tr>
+						<td class="rank">7</td>
+						<td  id="tr7">邵小毛</td>
+						<td  id="tr7" class="fansNum">244</td>
+						<td  id="tr7" class="status">上升</td>
+						</tr>
+
+						<tr>
+						<td class="rank">8</td>
+						<td  id="tr8">马頔</td>
+						<td  id="tr8" class="fansNum">235</td>
+						<td  id="tr8" class="status">下降</td>
+						</tr>
+						
+						<tr>
+						<td class="rank">9</td>
+						<td  id="tr9">P.K.14</td>
+						<td  id="tr9" class="fansNum">190</td>
+						<td  id="tr9" class="status">上升</td>
+						</tr>
+
+						<tr>
+						<td class="rank">10</td>
+						<td  id="tr10">茉莉僧</td>
+						<td  id="tr10" class="fansNum">167</td>
+						<td  id="tr10" class="status">上升</td>
+						</tr>
+					</tbody>
+				</table>
+				<br/><br/><br/>
+			</div>
+			<div id="chart">
+				<br/>
+				<h3 id="musicianName">
+					&nbsp;&nbsp;&nbsp;宋冬野&nbsp;增粉变化趋势
+				</h3>
+				<canvas id="canvas" height="272px" width="405px"></canvas>
+				<br/><br/>
+			</div>
+			
+			<div id="footer">
+				<footer>
+					<br/>
+					<p>&copy; 数音堂 2013</p>
+				</footer>
+			</div>
+		</div>
+		
+	</div>
+	
+      
+	<script>
+		var fansNum=new Array();
+		var lineChartData ;
+		var option;
+		
+		function drawChart(){
+			for(var i=0;i<6;i++){
+				fansNum[i]=Math.floor(Math.random()*150+200);
+			}
+			lineChartData = {
+				labels : ["一月","二月","三月","四月","五月","六月"],
+				datasets : [
+					{
+						fillColor : "rgba(36,36,36,0.3)",
+						strokeColor : "rgba(66,66,66,0.7)",
+						pointColor : "rgba(36,36,36,0.8)",
+						pointStrokeColor : "#fff",
+						data : [fansNum[0],fansNum[1],fansNum[2],fansNum[3],fansNum[4],fansNum[5]]
+					}
+				]
+			}
+			option = {	
+					scaleLineColor : "rgba(0,0,0,0.2)",
+					scaleFontColor : "#333",	
+			}
+			var myLine = new Chart(document.getElementById("canvas").getContext("2d")).Line(lineChartData,option);
+		}
+		drawChart();
+		
+		//change artist name
+		function whichElement(e)
+		  {
+		  if (!e) e = window.event
+				if (e.target) targ = e.target
+				else if (e.srcElement) targ = e.srcElement
+				tid=targ.id
+				a=document.getElementById("musicianName");
+				a2=a.innerHTML;
+				a.innerHTML=a2.replace(a2,"&nbsp;&nbsp;&nbsp"+document.getElementById(tid).innerHTML+" 增粉变化趋势");
+				//alert(document.getElementById(tid).innerHTML);
+		  }
+		  
+	 	//select table
+			$('#table').mouseover(function(){
+				//为表格行添加选择事件处理
+				$('tbody > tr', $('#customers')).click(function(id){
+				    $('.selected').removeClass('selected');	
+					$(this).addClass('selected'); //this 表示引发事件的对象，但它不是 jquery 对象
+					$('tr.alt').removeClass('selected');	
+					drawChart();
+				}).hover(		//注意这里的链式调用
+					function(){
+						$(this).addClass('mouseOver');
+						$('tr.alt').removeClass('mouseOver');	
+					},
+					function(){
+						$(this).removeClass('mouseOver');
+					}
+				);				
+			});
+	</script>
+        
+		
+		
+	</body>
+</html>

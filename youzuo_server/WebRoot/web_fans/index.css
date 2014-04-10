@@ -1,0 +1,114 @@
+		body{
+			font-size:medium;
+			font-family:Microsoft YaHei,LiHei Pro Medium;
+		}
+		#bg {
+			background-color:rgb(229,224,227);
+		}
+		.banner{
+			padding-top:10px;
+			padding-bottom:1px;
+			background-color:rgb(30,30,30);
+		}
+		.mBanner{
+			width:940px;
+			margin-left:auto;
+			margin-right:auto;
+		}
+		.lBanner{
+			width:30%;
+			float:left;
+		}
+		.rBanner{
+			width:70%;
+			margin-left:30%;
+			text-align:right;
+		}
+		p.rBar{
+			font-family:Microsoft YaHei,LiHei Pro Medium;
+			font-size:1em;
+			color:white;
+		}
+		a.rBar,a.bar,a.brand{
+			text-decoration:none;
+		 }
+		 a.brand{
+			text-align:left;
+			color:white;
+			font-weight:bold;
+			font-size:120%;
+		 }
+		 .content{
+			width:940px;
+			margin-left:auto;
+			margin-right:auto;
+		 }
+		 h1{
+			font-size:3em;
+		 }
+		 .title{
+			width:60%;
+			float:left;
+		 }
+		 .introduce{
+			width:53%;
+			float:left;
+			line-height:1.8em;
+		 }
+		 .tape{
+			margin-left:60%;
+			width:40%;
+		 }
+		 img{
+			  overflow:hidden;
+		}
+		#customers
+		  {
+		  width:100%;
+		  border-collapse:collapse;
+		  text-align:center;
+		  }
+
+		#customers td, #customers th 
+		  {
+		  color:#000000;
+		  font-size:1em;
+		  border:1px solid rgb(36,36,36);
+		  padding:5px 7px 4px 7px;
+		  }
+
+		#customers th 
+		  {
+		  font-size:1.1em;
+		  padding-top:5px;
+		  padding-bottom:4px;
+		  background-color:rgb(36,36,36);
+		  color:#ffffff;
+		  }
+		 #table{
+			width:53%;
+			float:left;
+		 }
+		 #chart{
+			width:40%;
+			margin-left:58%;
+		 }
+		 .mouseOver
+		{
+		    background-color:#ccc;
+		}
+		 .selected
+		{
+		    background-color:#ccc;
+		}
+		#footer{
+			width:15%;
+			margin-left:0%;
+			font-size:0.8em;
+			padding-bottom:5px;
+		 }
+		 a.rBar:link {color:rgb(160,160,160);}		/* 未被访问的链接 */
+		 a.rBar:visited {color:rgb(160,160,160);}	/* 已被访问的链接 */
+		 a.rBar:hover {color:rgb(255,255,255);}  	/* 鼠标指针移动到链接上 */
+		 a.rBar:active {color:rgb(255,255,255);}	/* 正在被点击的链接 */
+		
